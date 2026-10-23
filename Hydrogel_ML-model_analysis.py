@@ -1,17 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-bioink_generate_pool_for_shap_fixed.py
-
-Generate a dense candidate pool (default 5k) with full predicted rheology features,
-HB pressure, and GPR-predicted printability score. Trains RF/GB on measured data
-and (optionally) a surrogate RF on the dense pool for SHAP/PDP outputs.
-
-This is the fixed version: computes train R2/RMSE for GPR and uses RNG generator
-to avoid future numpy RNG warnings. Also imports permutation_importance when SHAP
-is not available.
+Generate a dense candidate pool with full predicted rheology features,
+HB pressure, and GPR-predicted printability score. Trains on measured data
+and a surrogate RF on the dense pool for SHAP output.
 """
-
 import os
 import sys
 import math
